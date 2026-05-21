@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "olympus-browser-qt"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reusable PyQt6 browser dialog for Olympus VSI image containers."
 readme = "README.md"
 requires-python = ">=3.10"

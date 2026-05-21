@@ -221,6 +221,26 @@ def format_metadata_summary(metadata: dict[str, Any]) -> str:
         ]
     )
 
+    obj_parts = []
+    obj_name = pick(metadata, "objective_name")
+    obj_mag  = as_float(pick(metadata, "objective_mag"))
+    na       = as_float(pick(metadata, "numerical_aperture"))
+    ri       = as_float(pick(metadata, "refractive_index"))
+    wd       = as_float(pick(metadata, "working_distance_um"))
+    if obj_name:
+        obj_parts.append(str(obj_name))
+    if obj_mag:
+        mag_str = f"{int(obj_mag)}x" if obj_mag == int(obj_mag) else f"{obj_mag}x"
+        obj_parts.append(mag_str)
+    if na:
+        obj_parts.append(f"NA {na:.2f}")
+    if ri:
+        obj_parts.append(f"RI {ri:.3f}")
+    if wd is not None:
+        obj_parts.append(f"WD {wd:.0f} um")
+    if obj_parts:
+        lines.append(f"Objective: {'  '.join(obj_parts)}")
+
     experiment = pick(metadata, "experiment_name")
     if experiment:
         lines.append(f"Experiment: {experiment}")
