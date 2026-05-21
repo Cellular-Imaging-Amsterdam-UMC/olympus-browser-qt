@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="sheet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#133a59"/>
+      <stop offset="100%" stop-color="#0a2033"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4fc3ff"/>
+      <stop offset="100%" stop-color="#1d7fbf"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 6h24l12 12v40H14z" fill="url(#sheet)" stroke="#8dd9ff" stroke-width="2" rx="4"/>
+  <path d="M38 6v12h12" fill="url(#fold)"/>
+  <circle cx="25" cy="30" r="7" fill="#21d4fd" fill-opacity="0.6"/>
+  <circle cx="38" cy="31" r="7" fill="#00d68f" fill-opacity="0.55"/>
+  <circle cx="31.5" cy="23" r="7" fill="#ffd166" fill-opacity="0.55"/>
+  <circle cx="31.5" cy="29" r="11" fill="none" stroke="#dff6ff" stroke-width="1.8" stroke-opacity="0.85"/>
+  <text x="32" y="51" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f5fbff">VSI</text>
+</svg>

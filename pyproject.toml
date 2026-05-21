@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "olympus-browser-qt"
+version = "0.1.0"
+description = "Reusable PyQt6 browser dialog for Olympus VSI image containers."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "NL-BioImaging contributors" },
+]
+keywords = ["olympus", "vsi", "pyqt6", "microscopy"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "PyQt6",
+  "numpy",
+  "opencv-python",
+  "tifffile",
+  "imagecodecs",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "build"]
+
+[project.scripts]
+olympus_browser = "olympus_browser_qt.cli:main"
+olympus_viewer = "olympus_browser_qt.olympus_viewer:main"
+
+[tool.hatch.build]
+include = [
+  "src/olympus_browser_qt/**",
+  "README.md",
+  "LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/olympus_browser_qt"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
